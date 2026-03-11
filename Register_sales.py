@@ -10,6 +10,12 @@ def register_sales():
             product = input("Product name: ")
             price = float(input("Unit price: "))
             quantity = int(input("Quantity: "))
+            if price < 0 or quantity < 0:
+                print("Price and quantity must be non-negative. Please try again.")
+                continue
+            elif product.isalpha() == False:
+                print("Product name must contain only letters. Please try again.")
+                continue
 
             sale = {
                 "product": product,
@@ -25,6 +31,6 @@ def register_sales():
                 validation = False
                 return sales
         except ValueError:
-            print("Invalid input. Please enter valid numbers for price and quantity.")
+            print("Invalid input. Please enter valid data.")
             
             
