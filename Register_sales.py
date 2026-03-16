@@ -26,8 +26,11 @@ def register_sales():
             sales.append(sale)
 
             option = input("Register another sale? (yes/no): ").lower()
+            if option not in ["yes","no" ]:
+                print ("Please enter yes or no ")
+                continue
 
-            if option == "no":
+            elif option == "no":
                 validation = False
                 return sales
         except ValueError:
